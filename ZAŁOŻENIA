@@ -31,6 +31,16 @@ ZAŁOŻENIA:
     1. Podział na SPRZEDAJĄCEGO i KUPUJĄCEGO
     2. Sprzedawane PRODUKTY posiadające NAZWĘ, CENĘ, STAN (?)
     3. BAZA DANYCH z użytkownikami i produktami
+  
+  STACK TECHNOLOGICZNY:
+    1. BAZA DANYCH - SQL
+    2. SERWER - APACHE / TOMCAT
+    3. BACKEND - JAVA/PHP/?
+    4. WARSTWA MOBILNA - JAVA/ANDROID
+    5. FRONTEND - HTML/CSS/JS
+    6. TEST - J UNIT
+    + 7. CIĄGŁA INTEGRACJA
+    
     
   FUNKCJE:
     1. Rejestracja i logowanie
