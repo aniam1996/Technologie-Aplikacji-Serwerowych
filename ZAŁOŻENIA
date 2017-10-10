@@ -1,0 +1,42 @@
+PROJEKT:    SKLEP INTERNETOWY
+CZŁONKOWIE: AGATA BUSZCZAK, HELENA GAŁĄZKA, ANNA MADUZIA, SZYMON NĘDZI
+------------------------------------------------------------------------------------------------------------
+TREŚĆ ZADANIA:
+
+Projekt
+
+Projekt realizowany jest w grupach 4-5-osobowych.
+W ramach projektu należy stworzyć aplikację wielowarstwową korzystającą z wybranych technologii serwerowych.
+
+Aplikacja powinna spełniać następujące wymagania:
+
+posiadać webową oraz mobilną warstwę interfejsu użytkownika,
+posiadać warstwę biznesową,
+posiadać warstwę dostępu do bazy danych,
+wykorzystywać do komunikacji pomiędzy warstwami interfejsy zdalne, w sczególności:
+warstwa webowa i mobilna powinny odwoływać się do warstwy biznesowej za pośrednictwem technologii zdalnego wywoływania procedur lub wzorca architektury REST,
+warstwa dostępu do bazy danych powinna odwoływać się do systemu baz danych niezależnego od warstwy webowej i biznesowej (czyli nie korzystamy z baz „osadzonych”).
+Aplikacja jest realizowana przyrostowo w dwutygodniowych fazach. W każdej fazie zespół musi zaraportować postępy, tzn. zaprezentować, co zostało zrobione w ciągu ostatnich 2 tygodni.
+
+/!\ Brak postępu w danej fazie oznacza każdorazowo odjęcie 2 punktów od punktacji końcowej dla każdego z członków zespołu.
+
+Dodatkowo, każdy z członków zespołu musi (raz w ciągu całego semestru) przygotować prezentację, w której przedstawi zaimplementowaną przez siebie funkcjonalność.
+
+Do oceny końcowej każdy zespół przedstawia działające oprogramowanie oraz przygotowuje raport (1-2 strony A4) zawierający opis projektu.
+
+------------------------------------------------------------------------------------------------------------
+
+ZAŁOŻENIA:
+  STRUKTURA:
+    1. Podział na SPRZEDAJĄCEGO i KUPUJĄCEGO
+    2. Sprzedawane PRODUKTY posiadające NAZWĘ, CENĘ, STAN (?)
+    3. BAZA DANYCH z użytkownikami i produktami
+    
+  FUNKCJE:
+    1. Rejestracja i logowanie
+    2. Wystawianie produktu na sprzedaż
+    3. Kupno produktu (KUP TERAZ)
+    4. Wyszukiwanie i filtrowanie produktów
+    + 5. Prywatne wiadomości do innych użytkowników
+    + 6. Komentarze i oceny na profilu użytkowników
+    + 7. Licytacja
