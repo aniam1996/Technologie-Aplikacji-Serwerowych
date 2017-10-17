@@ -13,6 +13,7 @@ Profil użytkownika: Nowy użytkownik zainteresowany jednym prostym zakupem. Nie
   5.1. Towar nie wchodzi do koszyka przy kliknięciu / pociągnięciu
   5.2. Towar dubluje się w koszyku
 6. Klika guzik "zapłać" i potwierdza wybór
-	6.1. Błąd płatności
+  6.1. Błąd płatności
+  6.2. Użytkownik kliknął Zapłać ale nie wybrał towaru
 7. Otrzymuje potwierdzenie płatności i zamówienia na maila
 8. Wylogowuje się i czeka na paczkę
