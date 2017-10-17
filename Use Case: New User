@@ -1,5 +1,7 @@
 Przypadek użycia:
 
+Profil użytkownika: Nowy użytkownik zainteresowany jednym prostym zakupem. Nie wymaga wiele, chce zakończyć tranzakcję w przeciągu pięciu minut.
+
 1. Użytkownik wchodzi na stronę
 2. Użytkownik rejestruje swoje konto (otrzymuje maila)
   2.1. Błąd rejestracji, użytkownik jest proszony żeby spróbować ponownie
