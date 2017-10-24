@@ -4,7 +4,9 @@
  require_once "connect.php";
 
  $connection = new mysqli($host, $db_user, $db_password, $db_name);
- 
+ $connection->query('SET NAMES utf8');
+ $connection->query('SET CARACTER_SET utf8_unicode_ci');
+
  if($connection->connect_errno!=0)
  {
 	echo("Error: ".$connection->connect_errno .".");
