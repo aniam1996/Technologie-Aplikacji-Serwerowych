@@ -5,7 +5,7 @@ session_start();
 
 <html lang="pl">
     <head>
-        <meta charset=""utf-8">
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>WOW</title>
 	</head>
