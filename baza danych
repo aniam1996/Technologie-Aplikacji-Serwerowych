@@ -1,0 +1,45 @@
+IF OBJECT_ID('Produkty','U') IS NOT NULL
+		drop table Produkty
+
+CREATE TABLE Produkty (
+idP int identity (100000,1) not null primary key,
+kategoria varchar(30) not null CHECK (kategoria in ('kowbojki','paski do ostrog','kapelusze','odziez','dodatki','zapalniczki ZIPPO','rewolwery','konie')),
+podkategoria varchar(20),
+plec varchar(1) CHECK (plec in ('d','m','u')),
+producent varchar(50),
+rozmiar varchar(5),
+cena int,
+opis varchar(200),
+zdjecie varchar(100),
+);
+
+insert into Produkty values
+('kowbojki',null,'u','Drwal',42,160,' tu jest opis ','tu jest zdjecie'),
+('paski do ostróg','null','u','Drwal',null,67,' tu jest opis ','tu jest zdjecie'),
+('kapelusze','skorzane','u','Drwal','M',140,' tu jest opis ','tu jest zdjecie'),
+('kapelusze','filcowe','u','Drwal','S',180,' tu jest opis ','tu jest zdjecie'),
+('kapelusze','slomkowe','u','Drwal','S',90,' tu jest opis ','tu jest zdjecie'),
+('kapelusze','dzieciece','u','Drwal-Junior','XS',70,' tu jest opis ','tu jest zdjecie'),
+('kapelusze','otok na kapelusz','u','Drwal','M',45,' tu jest opis ','tu jest zdjecie'),
+('odziez','t-shirty','d','Drwal','S',35,' tu jest opis ','tu jest zdjecie'),
+('odziez','t-shirty','m','Drwal','L',35,' tu jest opis ','tu jest zdjecie'),
+('odziez','koszule','d','Drwal','M',99,' tu jest opis ','tu jest zdjecie'),
+(odziez','koszule','m','Drwal','XL',120,' tu jest opis ','tu jest zdjecie'),
+('odziez','bluzy','d','Drwal','S',170,' tu jest opis ','tu jest zdjecie'),
+('odziez','bluzy','m','Drwal','XXL',180,' tu jest opis ','tu jest zdjecie'),
+('odziez','kurtki/plaszcze','u','Drwal','M',200,' tu jest opis ','tu jest zdjecie'),
+('odziez','chapsy','u','Drwal','M',80,' tu jest opis ','tu jest zdjecie'),
+('odziez','kamizelki','u','Drwal','M',95,' tu jest opis ','tu jest zdjecie'),
+('odziez','rekawiczki','u','Drwal','S',55,' tu jest opis ','tu jest zdjecie'),
+('odziez','szelki','u','Drwal','S',60,' tu jest opis ','tu jest zdjecie'),
+('odziez','poncha','u','Drwal','L',130,' tu jest opis ','tu jest zdjecie'),
+('dodatki','bandanki','u','Drwal','S',40,' tu jest opis ','tu jest zdjecie'),
+('dodatki','bola','u','Drwal','M',110,' tu jest opis ','tu jest zdjecie'),
+('dodatki','klamry do paskow','u','Drwal',null,85,' tu jest opis ','tu jest zdjecie'),
+('dodatki','przypinki','u','Drwal',null,35,' tu jest opis ','tu jest zdjecie'),
+('dodatki','breloki','u','Drwal',null,15,' tu jest opis ','tu jest zdjecie'),
+('dodatki','paski','u','Drwal','M',70,' tu jest opis ','tu jest zdjecie'),
+('dodatki','buklaki','u','Drwal','S',69,' tu jest opis ','tu jest zdjecie'),
+('dodatki','portfele','u','Drwal',null,120,' tu jest opis ','tu jest zdjecie'),
+('zapalniczki ZIPPO','u','Drwal',null,70,' tu jest opis ','tu jest zdjecie'),
+('rewolwery','u','PifPaf',null,699,' tu jest opis ','tu jest zdjecie')
