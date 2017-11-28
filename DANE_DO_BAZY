@@ -1,0 +1,15 @@
+HOST
+mysql.wmi.amu.edu.pl
+
+USER
+s416067
+
+PASSWORD
+bamfsprojekt
+
+NAZWA BAZY
+s416067_bamfs
+
+TABELE
+users
+  id | login | password | firstname | lastname | email
