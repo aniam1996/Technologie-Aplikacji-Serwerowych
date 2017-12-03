@@ -17,61 +17,124 @@
     </head>
     
     <body>
-		
         <button onclick="document.getElementById('loginpopout').style.display='block'">Login</button>
-		
+		<button onclick="document.getElementById('registerpopout').style.display='block'">Register</button>
 		<?php
 		if(isset($_SESSION['wronginput'])) {
 			echo('<div id="loginpopout" class="modal2">');
-		} else {echo('<div id="loginpopout" class="modal">');}
+		} else {
+			echo('<div id="loginpopout" class="modal">');
+		}
 		?>	
-		
-        <form class="modal-content animate" action="trylogin.php" method="post">
+		<!-- ----LOGIN MODAL -------->
+        <div class="modal-content animate">
+			<form action="trylogin.php" method="post">
 			<span id="close" class="close">&times;</span>
-			
 			<center>
-			<h2>YEEHAW</h2><hr>
+			<label><h2>YEEHAW</h2><hr></label>
 			<table>
 			<th>
-			<img width="100%" src="https://github.com/drakar1903/Technologie-Aplikacji-Serwerowych/blob/master/Logo.png?raw=true"><br/>
+			<label title = "lil bro"><img width="100%" src="https://github.com/drakar1903/Technologie-Aplikacji-Serwerowych/blob/master/Logo.png?raw=true"><br/>
+			</label>
 			</th>
 			<th>
-			Yer login: <br/>
-			<input type="text" name="login" placeholder="Enter your login" required><br/><br/>
-			Yer pass: <br/>
-			<input type="password" name="password" placeholder="Enter your password" required><br/><br/></br>
+			<label title = "Yer login">Yer login:
+			<input type="text" name="login" placeholder="Enter yer login" required><br/><br/>
+			</label>
+			<label title = "Yer pass">Yer pass:
+			<input type="password" name="password" placeholder="Enter yer password" required><br/><br/></br>
+			</labe>
+			<label title="Log in">
 			<button type="submit">Log in, pardner</button> <br/><br/>
 			<?php
 				if (isset($_SESSION['wronginput'])){
 				echo $_SESSION['wronginput'];}
 			?>
-			
+			</label>
+			</form>
 			</th>
 			<th style="padding:0">
 			<br/><br/><br/><br/>
 			<input type="checkbox" checked="unchecked"><small>Remember me</small></font><br/><br/><br/>
 			
-			<a href="#"><small>Forgot password?</small></a>
+			<a href="forgotpass.php"><small>Dang it I forgot.</small></a>
 			
 			</th>
 			</table>
 			</center>
-		 </form>
+		</div>
+		</div>
+		
+		<!-- ----REGISTRATION MODAL-->
+		<?php
+		if(isset($_SESSION['takenlogin']) || isset($_SESSION['takenemail'])) {
+			echo('<div id="registerpopout" class="modal2">');
+		} else {
+			echo('<div id="registerpopout" class="modal">');
+		}
+		?>
+		<div class="modal-content animate">
+		<form action="register.php" method="post">	
+			<span id="close2" class="close">&times;</span>
+			<label><center>Complete the form:</center></label>
+			<hr>
+			<label title = "First name">First name:
+			<input type="text" name="firstname" placeholder="Enter the name yer mommy gave ya" required><br/><br/>
+			</label>
+			<label title = "Last name">Last name:
+			<input type="text" name="lastname" placeholder="Enter the name yer daddy gave ya" required><br/><br/>
+			</label>
+			<label title="Login">Login:
+			<input type="text" name="login" placeholder="Enter the login ya want" required><br/><br/>
+			</label>
+			<label title = "E-mail">E-mail:
+			<input type="email" name="email" placeholder="Enter yer e-mail" required><br/><br/>
+			</label>
+			<label title = "Password">Password:
+			<input type="password" name="password" placeholder="Enter the password ya want" required><br/><br/>
+			</label>
+			<?php
+				if (isset($_SESSION['takenlogin'])){
+				echo $_SESSION['takenlogin'];}
+				if (isset($_SESSION['takenemail'])){
+				echo $_SESSION['takenemail'];}
+			?>
+			<br/><br/><center><button type="submit">Join th' pack</button></center>
+		</form>
+		</div>
 		</div>
 		 
 	<script>
+	//login modal
 	var modal = document.getElementById('loginpopout');
 	var btn = document.getElementById('close');
+	//registration modal
+	var modal2 = document.getElementById('registerpopout');
+	var btn2 = document.getElementById('close2');
+	
 	
 	btn.onclick = function() {
 		modal.style.display = "none";
+		<?php session_unset() ?>
+	}
+	btn2.onclick = function() {
+		modal2.style.display = "none";
+		<?php session_unset() ?>
 	}
 	
+
 	window.onclick = function(event) {
+		if (event.target == modal2) {
+			modal2.style.display = "none";
+			<?php session_unset() ?>
+		}
 		if (event.target == modal) {
 			modal.style.display = "none";
+			<?php session_unset() ?>
 		}
 	}
+	
+	
 	</script>
 	
     </body>
