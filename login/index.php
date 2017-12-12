@@ -36,14 +36,25 @@
 
     
 
-    <body>
-	
+    <body><center>
 	<h1>Sklep kowbojski</h1>
-
+	</center>
+	
         <button onclick="document.getElementById('loginpopout').style.display='block'">Login</button>
 
 		<button onclick="document.getElementById('registerpopout').style.display='block'">Register</button>
+	
+	<br><br>
+	<a href="kowbojki.php"><buttonmenu>Kowbojki</buttonmenu></a>
+	<a href="paski.php"><buttonmenu>Paski do ostróg</buttonmenu></a>
+	<a href="kapelusze.php"><buttonmenu>Kapelusze</buttonmenu></a>
+	<a href="odziez.php"><buttonmenu>Odzież</buttonmenu></a>
+	<a href="dodatki.php"><buttonmenu>Dodatki</buttonmenu></a>	
+	<a href="zapalniczki.php"><buttonmenu>Zapalniczki ZIPPO</buttonmenu></a>	
+	<a href="rewolwery.php"><buttonmenu>Rewolwery</buttonmenu></a><br>	
 
+	
+	<center>
 		<?php
 
 		if(isset($_SESSION['wronginput'])) {
@@ -277,25 +288,27 @@
 	
 
 	</script>
+	<br><br><br><br><br>
+	<a href="orderby.php"><buttonsort>Sortuj według ceny ↓</buttonsort></a>
 
 	
 <?php
- error_reporting(E_ALL ^ E_DEPRECATED); 
- $q = mysql_connect('localhost','root','') or die('Padl serwer');
- $q = mysql_query('SET NAMES utf8');
- $q = mysql_query('SET CARACTER_SET utf8_unicode_ci');
- $q = mysql_select_db('tas') or die('Padla baza');
- $tabela = mysql_query('select * from produkty');
-
- while($w = mysql_fetch_assoc($tabela))
- {
-	 
-	 echo('<br>'.$w['zdjecie'].'<br>'.$w['opis'].'<br>'.$w['cena'].'zł'.'<br><br>');
-
- }
+ require_once "connect.php";
+ $connection = new mysqli($host, $db_user, $db_password, $db_name);
+ $connection->query('SET NAMES utf8');
+ $connection->query('SET CARACTER_SET utf8_unicode_ci');
  
+ $wynik = $connection -> query('select opis,zdjecie,cena from produkty order by opis');
+ while (($tabela=$wynik -> fetch_assoc()) !== null)
+ {
+	 echo '<br>'.'<br>'.$tabela['zdjecie'].'<br>';
+	 echo $tabela['opis'].'<br>';
+	 echo $tabela['cena'].' zł'.'<br>';
+ }
+ $wynik -> close();
+ $connection -> close();
  ?>
  
-    </body>
+    </center></body>
 
 </html>
