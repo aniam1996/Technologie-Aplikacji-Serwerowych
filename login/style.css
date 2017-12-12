@@ -17,11 +17,15 @@ button {
 
 button:hover {
 	transition-duration: 0.5s;
-    background-color: black;
+	background-color: black;
+}
+
+body {	
+	background-color: #ffaaaa;
 }
 
 form {
-		padding: 16px;
+	padding: 16px;
 }
 
 table {
