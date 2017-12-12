@@ -37,8 +37,8 @@ th {
 	display: true;
 	position: fixed;
 	z-index: 1;
-	left: 0;
-    top: 0;
+	left: 0px;
+    top: -50px;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
@@ -50,8 +50,8 @@ th {
 	display: none;
 	position: fixed;
 	z-index: 1;
-	left: 0;
-    top: 0;
+	left: 0px;
+    top: -50px;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
