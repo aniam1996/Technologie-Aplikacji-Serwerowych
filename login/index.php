@@ -35,15 +35,25 @@
     </head>
 
     
-
-    <body>
-	
+    <body><center>
 	<h1>Sklep kowbojski</h1>
-
+	</center>
+	
         <button onclick="document.getElementById('loginpopout').style.display='block'">Login</button>
 
 		<button onclick="document.getElementById('registerpopout').style.display='block'">Register</button>
+	
+	<br><br>
+	<a href="kowbojki.php"><buttonmenu>Kowbojki</buttonmenu></a>
+	<a href="paski.php"><buttonmenu>Paski do ostróg</buttonmenu></a>
+	<a href="kapelusze.php"><buttonmenu>Kapelusze</buttonmenu></a>
+	<a href="odziez.php"><buttonmenu>Odzież</buttonmenu></a>
+	<a href="dodatki.php"><buttonmenu>Dodatki</buttonmenu></a>	
+	<a href="zapalniczki.php"><buttonmenu>Zapalniczki ZIPPO</buttonmenu></a>	
+	<a href="rewolwery.php"><buttonmenu>Rewolwery</buttonmenu></a><br>	
 
+	
+	<center>
 		<?php
 
 		if(isset($_SESSION['wronginput'])) {
@@ -278,6 +288,9 @@
 
 	</script>
 
+	<br><br><br><br><br>
+	<a href="orderby.php"><buttonsort>Sortuj według ceny ↓</buttonsort></a>
+
 	
 <?php
  require_once "connect.php";
@@ -285,7 +298,7 @@
  $connection->query('SET NAMES utf8');
  $connection->query('SET CARACTER_SET utf8_unicode_ci');
  
- $wynik = $connection -> query('select opis,zdjecie,cena from produkty');
+ $wynik = $connection -> query('select opis,zdjecie,cena from produkty order by opis');
  while (($tabela=$wynik -> fetch_assoc()) !== null)
  {
 	 echo '<br>'.'<br>'.$tabela['zdjecie'].'<br>';
@@ -296,6 +309,6 @@
  $connection -> close();
  ?>
  
-    </body>
+    </center></body>
 
 </html>
